@@ -15,11 +15,15 @@
 
 import tensorflow as tf
 import numpy as np
+import matplotlib
+matplotlib.use('tkagg')
+#matplotlib.use('GTKAgg')
 import matplotlib.pyplot as plt
 plt.style.use(["ggplot", "tensorflowvisu.mplstyle"])
-import matplotlib
 #matplotlib.use('macosx') #this is the default on mac
-matplotlib.use('Agg') #https://matplotlib.org/faq/howto_faq.html
+#matplotlib.use('Agg') #https://matplotlib.org/faq/howto_faq.html
+#matplotlib.use('GTK') #https://stackoverflow.com/questions/3453188/matplotlib-display-plot-on-a-remote-machine
+#matplotlib.use('tkagg')
 #print("matplotlib version: " + matplotlib.__version__)
 import matplotlib.animation as animation
 from matplotlib import rcParams
