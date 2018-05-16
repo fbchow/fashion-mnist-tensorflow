@@ -21,7 +21,7 @@ print("Tensorflow version " + tf.__version__)
 tf.set_random_seed(0)
 
 # Download images and labels into mnist.test (10K images+labels) and mnist.train (60K images+labels)
-mnist = mnist_data.read_data_sets("data", one_hot=True, reshape=False, validation_size=0)
+mnist = mnist_data.read_data_sets("data/fashion", one_hot=True, reshape=False, validation_size=0)
 
 # neural network structure for this sample:
 #
@@ -136,7 +136,7 @@ def training_step(i, update_test_data, update_train_data):
     # the backpropagation training step
     sess.run(train_step, {X: batch_X, Y_: batch_Y, step: i, pkeep: 0.75})
 
-datavis.animate(training_step, 10001, train_data_update_freq=20, test_data_update_freq=100)
+datavis.animate(training_step, 10001, train_data_update_freq=20, test_data_update_freq=100, save_movie=True)
 
 # to save the animation as a movie, add save_movie=True as an argument to datavis.animate
 # to disable the visualisation use the following line instead of the datavis.animate line
